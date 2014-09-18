@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+#modify-pane-tree {
+	width: 400px;
+	height: 600px;
+}
+
+.errorMessage {
+	color: red;
+}
+
+treechildren::-moz-tree-checkbox {
+  list-style-image: none;
+}
+
+treechildren::-moz-tree-checkbox(checked) {
+  list-style-image: url("chrome://global/skin/checkbox/cbox-check.gif");
+}

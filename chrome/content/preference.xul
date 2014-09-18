@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://kancollemodifier/content/preference.css" type="text/css"?>
+
+<!DOCTYPE prefwindow SYSTEM "chrome://kancollemodifier/locale/preference.dtd">
+
+<prefwindow id="pref-window" title="&kancollemodifier.pref.title;" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" onload="init();" ondialogaccept="save();">
+	<prefpane>
+		<preferences>
+			<preference id="pref-modify-enable" name="extensions.kancollemodifier.enable" type="bool"/>
+		</preferences>
+		<vbox flex="1">
+			<hbox align="center">
+				<checkbox label="&kancollemodifier.pref.enable;" preference="pref-modify-enable"/>
+				<spacer flex="1"/>
+				<button id="pref-addbtn" label="&kancollemodifier.pref.addbtn;" oncommand="addModDataItem();"/>
+				<button id="pref-delbtn" label="&kancollemodifier.pref.delbtn;" disabled="true" oncommand="deleteModDataItem();"/>
+			</hbox>
+
+			<hbox align="center" flex="1">
+				<tree id="pref-tree" flex="1" rows="4" editable="true" onselect="updateModDelBtnStatus();">
+					<treecols>
+						<treecol id="modid" label="&kancollemodifier.pref.item.id;" flex="1" editable="true"/>
+						<splitter class="tree-splitter"/>
+						<treecol id="modname" label="&kancollemodifier.pref.item.name;" flex="2" editable="true"/>
+						<splitter class="tree-splitter"/>
+						<treecol id="modfile" label="&kancollemodifier.pref.item.hackfile;" flex="4"/>
+						<splitter class="tree-splitter"/>
+						<treecol id="modenable" label="&kancollemodifier.pref.item.enable;" flex="0" type="checkbox" editable="true"/>
+					</treecols>
+					<treechildren/>
+				</tree>
+			</hbox>
+
+			<hbox align="center">
+				<label id="pref-error" class="errorMessage"/>
+			</hbox>
+		</vbox>
+	</prefpane>
+
+	<stringbundleset id="stringbundleset">
+		<stringbundle id="pref-bundle" src="chrome://kancollemodifier/locale/preference.properties"/>
+	</stringbundleset>
+	<script type="application/javascript" src="chrome://kancollemodifier/content/preference.js"/>
+</prefwindow>
