@@ -73,6 +73,7 @@ this.KanColleShipInfo = {
 	get hasValue() { return shipInfoList.length > 0; },
 
 	update: function(info, graph) {
+		shipInfoList = [];
 		let count = info.length;
 		for(let i = 0; i < count; i++) {
 			let si = new shipInfo();
