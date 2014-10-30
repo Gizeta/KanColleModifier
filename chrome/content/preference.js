@@ -9,8 +9,8 @@ Cu.import("chrome://kancollemodifier/content/KanColleShipInfo.jsm");
 let strBundle;
 
 function updateModDelBtnStatus() {
-	let delbtn = document.getElementById("pref-delbtn");
-	let dataTree = document.getElementById("pref-tree");
+	let delbtn = document.getElementById("pref-ship-delbtn");
+	let dataTree = document.getElementById("pref-ship-tree");
 	delbtn.disabled = dataTree.view.selection.count < 1;
 }
 
@@ -19,7 +19,7 @@ function addModDataItem() {
 	let fp = Cc["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
 	fp.init(window, strBundle.getString("kancollemodifier.filepicker.title"), nsIFilePicker.modeOpenMultiple);
 	fp.appendFilter(strBundle.getString("kancollemodifier.filepicker.filter"), "*.swf");
-	
+
 	let rv = fp.show();
 	if(rv == nsIFilePicker.returnOK || rv == nsIFilePicker.returnReplace) {
 		let files = fp.files;
@@ -66,7 +66,7 @@ function deleteModDataItem() {
 		tree.view.selection.getRangeAt(i, start, end);
 		startRec.push(start.value);
 		countRec.push(end.value - start.value + 1);
-		
+
 	}
 	for(let i = 0; i < rangeCount; i++) {
 		table.splice(startRec[i], countRec[i]);
@@ -137,7 +137,7 @@ function treeView(table) {
 }
 
 function init() {
-	tree = document.getElementById("pref-tree");
+	tree = document.getElementById("pref-ship-tree");
 	data = KanColleDataModifier.shipData;
 	table = [];
 	data.forEach(function(element) {

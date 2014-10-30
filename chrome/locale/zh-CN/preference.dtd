@@ -1,8 +1,12 @@
 <!ENTITY kancollemodifier.pref.title "KanColleModifier设置">
-<!ENTITY kancollemodifier.pref.enable "开启魔改">
-<!ENTITY kancollemodifier.pref.addbtn "添加">
-<!ENTITY kancollemodifier.pref.delbtn "删除">
-<!ENTITY kancollemodifier.pref.item.id "ID">
-<!ENTITY kancollemodifier.pref.item.name "舰名">
-<!ENTITY kancollemodifier.pref.item.hackfile "魔改文件">
-<!ENTITY kancollemodifier.pref.item.enable "开启">
+
+<!ENTITY kancollemodifier.pref.tab.name1 "设置">
+<!ENTITY kancollemodifier.pref.tab.name2 "舰娘魔改">
+
+<!ENTITY kancollemodifier.pref.ship.enable "开启舰娘魔改">
+<!ENTITY kancollemodifier.pref.ship.addbtn "添加">
+<!ENTITY kancollemodifier.pref.ship.delbtn "删除">
+<!ENTITY kancollemodifier.pref.ship.item.id "ID">
+<!ENTITY kancollemodifier.pref.ship.item.name "舰名">
+<!ENTITY kancollemodifier.pref.ship.item.hackfile "魔改文件">
+<!ENTITY kancollemodifier.pref.ship.item.enable "开启">

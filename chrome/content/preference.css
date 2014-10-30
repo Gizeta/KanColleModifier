@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-#modify-pane-tree {
-	width: 400px;
-	height: 600px;
+#pref-ship-tree {
+	width: 350px;
+	height: 250px;
 }
 
 .errorMessage {
