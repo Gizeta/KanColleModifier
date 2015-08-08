@@ -19,7 +19,7 @@ function addModDataItem() {
 	let fp = Cc["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
 	fp.init(window, strBundle.getString("kancollemodifier.filepicker.title"), nsIFilePicker.modeOpenMultiple);
 	fp.appendFilter(strBundle.getString("kancollemodifier.filepicker.filter"), "*.swf");
-	
+
 	let rv = fp.show();
 	if(rv == nsIFilePicker.returnOK || rv == nsIFilePicker.returnReplace) {
 		let files = fp.files;
@@ -66,7 +66,7 @@ function deleteModDataItem() {
 		tree.view.selection.getRangeAt(i, start, end);
 		startRec.push(start.value);
 		countRec.push(end.value - start.value + 1);
-		
+
 	}
 	for(let i = 0; i < rangeCount; i++) {
 		table.splice(startRec[i], countRec[i]);
@@ -161,7 +161,7 @@ function init() {
 
 	strBundle = document.getElementById("pref-bundle");
 	if(!KanColleShipInfo.hasValue) {
-		document.getElementById("pref-error").innerHTML = strBundle.getString("kancollemodifier.error.nodata");
+		document.getElementById("pref-error").textContent = strBundle.getString("kancollemodifier.error.nodata");
 	}
 }
 
