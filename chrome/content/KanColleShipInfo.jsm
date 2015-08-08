@@ -64,7 +64,14 @@ this.KanColleShipInfo = {
 			si.id = info[i].api_id;
 			si.sortno = info[i].api_sortno;
 			si.name = info[i].api_name;
-			si.filename = graph[i].api_filename;
+
+			let c = graph.length;
+			for(let j = 0; j < c; j++) {
+				if(graph[j].api_id == si.id) {
+					si.filename = graph[j].api_filename;
+				}
+			}
+
 			shipInfoList.push(si);
 		}
 
